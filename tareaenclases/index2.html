@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estreno de Película</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('nuevo/lg.webp');
+            background-size: cover;
+            background-position: center;
+            color: black;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .content {
+            padding: 60px 20px;
+            background-color: #B2BABB;
+            margin-left: 10%;
+            width: 40%;
+            border-radius: 10px;
+        }
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .content p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .content button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .content button:hover {
+            background-color: #b00710;
+        }
+        .form-container {
+            background-color: #B2BABB;
+            padding: 40px;
+            border-radius: 40px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .form-container h2 {
+            margin-top: 0%;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="tel"],
+        .form-container input[type="number"],
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .trailer-container {
+            display: none; /* Ocultar el contenedor del video por defecto */
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 560px;
+            height: 315px;
+            border: none;
+        }
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+                justify-content: center;
+            }
+            .content {
+                margin: 0;
+                width: 80%;
+                padding: 20px;
+            }
+            .form-container {
+                margin: 20px auto;
+                width: 80%;
+            }
+            .trailer-container iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    <script>
+        function showTrailer() {
+            var trailerContainer = document.getElementById('trailer-container');
+            trailerContainer.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>EL LADRON DE PERROS</h1>
+        <p>El estreno que no te puedes perder.</p>
+        <button onclick="showTrailer()">Ver Trailer</button>
+        <div id="trailer-container" class="trailer-container">
+            <iframe src="https://www.youtube.com/embed/Zf-36pdmVA0?si=2S87cufkuFI2NL5r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="form-container">
+        <h2>Formulario de Registro</h2>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Número de Celular:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" required>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
